@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books</title>
+  </head>
+  <body>
+    <h2>Available Books</h2>
+    <ul>
+      {% for book in books %}
+      <li>
+        {{ book.title }} - {{ book.author }} ({{ "Available" if book.available
+        else "Not Available" }})
+      </li>
+      {% empty %}
+      <li>No books found</li>
+      {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+  </body>
+</html>
